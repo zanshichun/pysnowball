@@ -1,21 +1,12 @@
-import os
-
-name = "pysnowball"
-
-__author__ = 'Yang Yu'
+from pysnowball import cons as cons
+from pysnowball import token as token
+from pysnowball import finance as finance
 
 
-from pysnowball.finance import (cash_flow, indicator, balance, income, business)
-
-from pysnowball.report import (report, earningforecast)
-
-from pysnowball.capital import(
-    margin, blocktrans, capital_assort, capital_flow, capital_history)
-
-from pysnowball.realtime import(quotec, pankou)
-
-from pysnowball.f10 import(skholderchg, skholder, main_indicator,
-                           industry, holders, bonus, org_holding_change, 
-                           industry_compare, business_analysis, shareschg, top_holders)
-
-from pysnowball.token import (get_token,set_token)
+if __name__ == '__main__':
+    token.set_token(cons.SNOW_BALL_TOKEN)
+    print("cash_flow:\t"+str(finance.cash_flow("SH601857")))
+    print("balance:\t"+str(finance.balance("SH601857")))
+    print("income:\t"+str(finance.income("SH601857")))
+    print("business:\t"+str(finance.business("SH601857")))
+    print("indicator:\t"+str(finance.indicator("SH601857")))
